@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 //DB Connection String for Entity Framework
-var connString = builder.Configuration.GetConnectionString("BookStoreDbConnection");
+var connString = builder.Configuration.GetConnectionString("BookStoreAppDbConnection");
 builder.Services.AddDbContext<BookStoreDbContext>(options => options.UseSqlServer(connString));
 
 builder.Services.AddControllers();
