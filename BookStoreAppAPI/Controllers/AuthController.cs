@@ -62,7 +62,7 @@ namespace BookStoreAppAPI.Controllers
 
         [HttpPost]
         [Route("login")]
-        public async Task<IActionResult> Login(LoginUserDto userDto)
+        public async Task<ActionResult<AuthResponse>> Login(LoginUserDto userDto)
         {
             try
             {
@@ -83,7 +83,7 @@ namespace BookStoreAppAPI.Controllers
                     UserId = user.Id
                 };
 
-                return Accepted(response);
+                return response;
                
             }
             catch (Exception ex)
